@@ -16,10 +16,9 @@
   <div class="content-wrapper">
     <h2>Some ideas</h2>
     <ul class="bare-list float-grid css-grid">
-      <%=render(partial:'idea_card') %>
-      </li>
-      <%=render(partial:'idea_card') %>
-      <%=render(partial:'idea_card') %>
+      <% ['titre1','titre2','titre3'].each do |item| %>
+      <li>    <%= render(partial: 'idea_card', locals: {card_title: item}) %> </li>
+      <% end %>
     </ul>
   </div>
   <div class="see-more">
