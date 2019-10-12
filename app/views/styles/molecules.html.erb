@@ -2,9 +2,9 @@
   <div>
     <nav>
       <ul class="sub-navigation">
-      <%= render(partial: 'partial_link', locals: {title: 'Atoms', uri: 'atoms.html'}) %>
-        <%= render(partial: 'partial_link', locals: {title: 'Molecules', uri: 'molecules.html'}) %>
-      <%= render(partial: 'partial_link', locals: {title: 'Organismes', uri: 'organisms.html'}) %>
+      <%= render(partial: 'partial_link', locals: {title: 'Atoms', uri: 'atoms.html',current: false}) %>
+        <%= render(partial: 'partial_link', locals: {title: 'Molecules', uri: 'molecules.html',current: true}) %>
+      <%= render(partial: 'partial_link', locals: {title: 'Organismes', uri: 'organisms.html',current: false}) %>
         <li><a href="templates.html">Templates</a></li>
         <li><a href="#pages">Pages</a></li>
       </ul>
