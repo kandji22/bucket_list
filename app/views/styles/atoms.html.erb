@@ -7,8 +7,8 @@
     <nav>
       <ul class="sub-navigation">
       <%= render(partial: 'partial_link', locals: {title: 'Atoms', uri: 'atoms.html'}) %>
-        <li><%=link_to('Molecules','molecules.html') %></li>
-        <li> <%=link_to('Organisms','organisms.html') %></li>
+        <%= render(partial: 'partial_link', locals: {title: 'Molecules', uri: 'molecules.html'}) %>
+        <%= render(partial: 'partial_link', locals: {title: 'Organisms', uri: 'Organisms.html'}) %>
         <li><a href="#">Templates</a></li>
         <li><a href="#">Pages</a></li>
       </ul>
