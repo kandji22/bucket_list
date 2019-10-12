@@ -6,7 +6,7 @@
     </p>
     <nav>
       <ul class="sub-navigation">
-        <li><a href="styleguide.html" class="current">Atoms</a></li>
+      <%= render(partial: 'partial_link', locals: {title: 'Atoms', uri: 'atoms.html'}) %>
         <li><%=link_to('Molecules','molecules.html') %></li>
         <li> <%=link_to('Organisms','organisms.html') %></li>
         <li><a href="#">Templates</a></li>
