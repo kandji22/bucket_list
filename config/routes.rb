@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get 'styles/organisms'
 
   get 'ideas/index'
+
   root to: 'home#index'
+
+  get 'ideas/new'
+
+  post 'ideas/create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
