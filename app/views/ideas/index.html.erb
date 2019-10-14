@@ -10,13 +10,14 @@
   <main>
     <div class="content-wrapper">
       <h1>Results for "everything"</h1>
+      <p>  <%= @search_term %>  </p>
     </div>
     <div class="content-wrapper">
       <ul class="bare-list float-grid css-grid">
         <% ["titre1","tritre2","titre3"].each do |item| %>
         <li>
           <%= render(partial: 'idea_card', locals: {card_title: item }) %>
-            
+
 
         </li>
       <% end %>
