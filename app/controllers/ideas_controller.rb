@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
 
   def create
     @title = params[:title]
-    logger.info("le theme de recherche est #{@title} ")
+    logger.info(@title)
     redirect_to(ideas_index_path)
   end
 end
