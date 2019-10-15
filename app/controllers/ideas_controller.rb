@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
   def index
     @search_term = params[:q]
     logger.info("le theme de recherche est #{@search_term} ")
+    @idea =Idea.all
   end
 
   def new

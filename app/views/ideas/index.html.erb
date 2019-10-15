@@ -14,15 +14,11 @@
     </div>
     <div class="content-wrapper">
       <ul class="bare-list float-grid css-grid">
-        <% ["titre1","tritre2","titre3"].each do |item| %>
+        <% @idea.each do |title| %>
         <li>
-          <%= render(partial: 'idea_card', locals: {card_title: item }) %>
-
-
+          <%= render(partial: 'idea_card', locals: {card_title: title.title }) %>
         </li>
       <% end %>
-
-
       </ul>
     </div>
     <div class="see-more">
