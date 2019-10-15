@@ -12,6 +12,9 @@ class IdeasController < ApplicationController
   def create
     @title = params[:title]
     logger.info(@title)
+    idea = Idea.new
+    idea.title = params[:title]
+    idea.save!
     redirect_to(ideas_index_path)
   end
 end
