@@ -1,5 +1,5 @@
 class AcountController < ApplicationController
   def ideas
-    @acount = Acount.all
+  @idea =Idea.all
   end
 end
