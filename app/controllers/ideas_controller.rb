@@ -15,6 +15,10 @@ class IdeasController < ApplicationController
     idea = Idea.new
     idea.title = params[:title]
     idea.save!
+    @done_count = 0
+    @done_count++
+    idea.done_count=@done_count
+    idea.save!
     redirect_to(ideas_index_path)
   end
 end
