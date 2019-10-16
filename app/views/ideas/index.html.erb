@@ -14,7 +14,7 @@
     </div>
     <div class="content-wrapper">
       <ul class="bare-list float-grid css-grid">
-        <% @acount.each do |title| %>
+        <% @idea.each do |title| %>
         <li>
           <%= render(partial: 'idea_card', locals: {card_title: title.title }) %>
         </li>
