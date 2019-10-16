@@ -3,7 +3,6 @@ class IdeasController < ApplicationController
     @search_term = params[:q]
     logger.info("le theme de recherche est #{@search_term} ")
     @idea =Idea.all
-    @done_count=  @idea.length
   end
 
   def new
@@ -15,6 +14,7 @@ class IdeasController < ApplicationController
     logger.info(@title)
     idea = Idea.new
     idea.title = params[:title]
+    idea.done_count = params[:done_count]
     idea.save!
     redirect_to(ideas_index_path)
   end
