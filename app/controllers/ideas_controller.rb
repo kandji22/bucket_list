@@ -28,6 +28,8 @@ class IdeasController < ApplicationController
 
 
   def update
+    idea=Idea.find(params[:id])
+    redirect_to(acount_ideas_path)
   end
 
 
