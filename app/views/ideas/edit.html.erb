@@ -1,0 +1,25 @@
+<main>
+ <div class="content-wrapper">
+   <h1>Modified idea</h1>
+
+     <%= form_tag(ideas_path(@idea), method: 'PATCH', class: 'global-search') do %>
+     <div class="input-group input-group--horizontal">
+       <label class="input-group__label" for="title">Title</label>
+       <%= text_field_tag('title', @idea.title, class: 'input-group__field', placeholder: 'E.g. Ride a camel' )  %>
+     </div>
+     <div class="input-group input-group--horizontal">
+       <label class="input-group__label" for="done_count">nbr d abonne</label>
+       <%= text_field_tag('done_count', @idea.done_count, class: 'input-group__field', placeholder: 'done_count' )  %>
+     </div>
+     <div class="input-group input-group--horizontal">
+       <label class="input-group__label" for="photo_url">photo url</label>
+       <%= text_field_tag('photo_url', @idea.photo_url, class: 'input-group__field', placeholder: 'done_count' )  %>
+     </div>
+     <div class="prompt">
+       <a class="prompt__cancel" href="#cancel">Cancel</a>
+       <%= button_tag('Create', class: 'btn btn--primary prompt__confirm')  %>
+
+     </div>
+   <% end %>
+ </div>
+</main>

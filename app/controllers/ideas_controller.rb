@@ -22,6 +22,8 @@ class IdeasController < ApplicationController
 
 
   def edit
+    id=params[:id]
+    @idea= Idea.find(id)
   end
 
 
