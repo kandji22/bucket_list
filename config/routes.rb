@@ -17,5 +17,10 @@ Rails.application.routes.draw do
 
   get 'acount/ideas'
 
+  get 'ideas/:id/edit', to: 'ideas#edit', as: 'edit_ideas'
+
+
+  patch 'ideas/:id', to: 'ideas#update', as: 'ideas'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
