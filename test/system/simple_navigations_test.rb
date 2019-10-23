@@ -1,7 +1,7 @@
 require "application_system_test_case"
 
 class SimpleNavigationsTest < ApplicationSystemTestCase
-  test 'search term is displayed' do
+  test 'style guide navigation' do
     visit('/')
     assert page.has_content?('Bucket List')
     fill_in('q', with: 'Spain').send_keys(:enter)
