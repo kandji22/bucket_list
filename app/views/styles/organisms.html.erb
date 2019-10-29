@@ -57,7 +57,7 @@
       <ul class="bare-list float-grid css-grid">
         <% ["see the north like","very long title","short","short"].each do |item| %>
         <li>
-          <%= render(partial: 'idea_card', locals: {card_title: item, done_count: 'done count', photo_url: 'http://fpoimg.com/255x170' }) %>
+          <%= render(partial: 'idea_card', locals: {card_title: item, done_count: 'done count', photo_url: 'http://fpoimg.com/255x170',idea: 1 }) %>
         </li>
         <% end %>
       </ul>
