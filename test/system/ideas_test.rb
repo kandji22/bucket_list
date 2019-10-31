@@ -24,4 +24,24 @@ class IdeasTest < ApplicationSystemTestCase
     assert page.has_content?('ma premier test')
 
   end
+  test 'Montée au Mont-Blanc' do
+    idea=Idea.new
+    idea.title='Montée du Mont-Blanc'
+    idea.done_count=50
+    idea.photo_url='http://fpoimg.com/255x170'
+    idea.save!
+    idea2=Idea.new
+    idea2.title='Visit Niagara Falls'
+    idea2.done_count=90
+    idea2.photo_url='http://fpoimg.com/255x170'
+    idea2.save!
+    sleep(2.seconds)
+
+      visit('/')
+      sleep(2.seconds)
+    fill_in("q", with:"Mont").send_keys(:enter)
+      sleep(2.seconds)
+    assert_equal current_path,ideas_index_path
+    assert page.has_content?('Monté du Mont-Blanc')
+  end
 end
