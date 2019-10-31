@@ -45,4 +45,11 @@ class IdeasTest < ApplicationSystemTestCase
     assert page.has_content?('Montée du Mont-Blanc')
     refute page.has_content?('Visit Niagara Falls')
   end
+  test 'verification aucun idée crée' do
+
+      visit ideas_index_path
+        sleep(2.seconds)
+      assert page.has_content?('No Ideas Found')
+
+  end
 end
