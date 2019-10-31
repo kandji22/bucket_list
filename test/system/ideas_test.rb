@@ -49,7 +49,7 @@ class IdeasTest < ApplicationSystemTestCase
 
       visit ideas_index_path
         sleep(2.seconds)
-      assert page.has_content?('No Ideas Found')
+      assert page.has_content? ('No Ideas Found')
 
   end
 end

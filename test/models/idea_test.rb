@@ -79,6 +79,41 @@ test 'Deux résultats correspondants' do
   idea2.photo_url='http://fpoimg.com/255x170'
   idea2.save!
   assert_equal Idea.search('pyramide').length, 2
+end
+test 'Aucun enregistrement d idée n existe' do
+assert_equal(Idea.most_recent.length,0)
+end
+test 'Deux enregistrements d idées existent.' do
+idea=Idea.new
+idea.title='Placez-vous au sommet du pyramide'
+  idea.save!
+  idea2=Idea.new
+  idea2.title='Place-vou au sommet du pyramide'
+    idea2.save!
+assert_equal(Idea.most_recent.length,2)
+assert_equal(Idea.most_recent.first.title,'Place-vou au sommet du pyramide')
+end
+test 'Six enregistrements d idées existent' do
+idea=Idea.new
+idea.title='Placez-vous au sommet du pyramide'
+  idea.save!
+  idea2=Idea.new
+  idea2.title='Place-vou '
+    idea2.save!
+    idea2=Idea.new
+    idea2.title=' sommet du pyramide'
+      idea2.save!
+      idea2=Idea.new
+      idea2.title=' sommet '
+        idea2.save!
+        idea2=Idea.new
+        idea2.title='vou '
+          idea2.save!
+          idea2=Idea.new
+          idea2.title='pyramide'
+            idea2.save!
+assert_equal(Idea.most_recent.length,3 )
+assert_equal(Idea.most_recent.first.title,'pyramide')
 
 end
 end
