@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-      @idea =Idea.all
+      @idea =Idea.most_recent
   end
 end
