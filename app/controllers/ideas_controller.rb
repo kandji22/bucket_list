@@ -2,7 +2,8 @@ class IdeasController < ApplicationController
   def index
     @search_term = params[:q]
     logger.info("le theme de recherche est #{@search_term} ")
-    @idea =Idea.all
+
+    @idea =Idea.where('title LIKE?',"%#{@search_term}%")
   end
 
   def new
