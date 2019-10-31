@@ -48,4 +48,37 @@ test 'updated_at is changed after updating photo_url' do
  idea.save!
  refute_equal(idea.updated_at, first_updated_at)
 end
+
+test 'Un résultat correspondant' do
+  idea=Idea.new
+  idea.title='Empire State Building'
+  idea.done_count=50
+  idea.photo_url='http://fpoimg.com/255x170'
+  idea.save!
+  assert_equal Idea.search('Empire').length,1
+
+end
+test 'Aucun résultat correspondant' do
+  idea=Idea.new
+  idea.title='Empire State Building'
+  idea.done_count=50
+  idea.photo_url='http://fpoimg.com/255x170'
+  idea.save!
+  assert_empty(Idea.search('snorkelling'))
+
+end
+test 'Deux résultats correspondants' do
+  idea=Idea.new
+  idea.title='Placez-vous au sommet du pyramide'
+  idea.done_count=90
+  idea.photo_url='http://fpoimg.com/255x170'
+  idea.save!
+  idea2 =Idea.new
+  idea2.title='Debout sur une pyramide'
+  idea2.done_count=50
+  idea2.photo_url='http://fpoimg.com/255x170'
+  idea2.save!
+  assert_equal Idea.search('pyramide').length, 2
+
+end
 end

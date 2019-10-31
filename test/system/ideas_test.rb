@@ -42,6 +42,7 @@ class IdeasTest < ApplicationSystemTestCase
     fill_in("q", with:"Mont").send_keys(:enter)
       sleep(2.seconds)
     assert_equal current_path,ideas_index_path
-    assert page.has_content?('Monté du Mont-Blanc')
+    assert page.has_content?('Montée du Mont-Blanc')
+    refute page.has_content?('Visit Niagara Falls')
   end
 end
