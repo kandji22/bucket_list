@@ -99,6 +99,24 @@ test 'Six enregistrements d idées existent' do
   idea.title ="titre #{i + 1}"
   idea.save!
 end
-assert_equal(Idea.most_recent.first.title,'titre 6')
+assert_equal(Idea.most_recent.first.title,'titre  6')
 end
+test 'Only description match' do
+  idea2=Idea.new
+  idea2.title='Surfing in Portugal'
+  idea2.migration='See what Atlantic coast waves are like'
+    idea2.save!
+    assert_equal(Idea.search('coast').length,1)
+end
+test 'Description et titre du match' do
+idea1=Idea.new
+idea1.title='Randonnée de nuit en Suisse'
+idea1.migration='Séjour dans un refuge suisse à la montagne'
+  idea1.save!
+  idea2=Idea.new
+  idea2.title='Randonnée dans les montagne en Italie'
+  idea2.migration='Voir les Dolomites et les Alpes italiennes'
+    idea2.save!
+    assert_equal(Idea.search('montagne').length,2)
+  end
 end
