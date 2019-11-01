@@ -27,11 +27,9 @@ class IdeasController < ApplicationController
 
 
   def update
+    hash={title:params[:title],done_count:params[:done_count],photo_url:params[:photo_url] }
     idea=Idea.find(params[:id])
-    idea.title = params[:title]
-    idea.done_count = params[:done_count]
-    idea.photo_url = params[:photo_url]
-    idea.save!
+    idea.update(hash)
     redirect_to(acount_ideas_path)
 
   end
