@@ -94,26 +94,11 @@ assert_equal(Idea.most_recent.length,2)
 assert_equal(Idea.most_recent.first.title,'Place-vou au sommet du pyramide')
 end
 test 'Six enregistrements d idées existent' do
-idea=Idea.new
-idea.title='Placez-vous au sommet du pyramide'
+6.times do |i|
+  idea =Idea.new
+  idea.title ="titre #{i + 1}"
   idea.save!
-  idea2=Idea.new
-  idea2.title='Place-vou '
-    idea2.save!
-    idea2=Idea.new
-    idea2.title=' sommet du pyramide'
-      idea2.save!
-      idea2=Idea.new
-      idea2.title=' sommet '
-        idea2.save!
-        idea2=Idea.new
-        idea2.title='vou '
-          idea2.save!
-          idea2=Idea.new
-          idea2.title='pyramide'
-            idea2.save!
-assert_equal(Idea.most_recent.length,3 )
-assert_equal(Idea.most_recent.first.title,'pyramide')
-
+end
+assert_equal(Idea.most_recent.first.title,'titre 6')
 end
 end

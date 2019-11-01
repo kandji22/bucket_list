@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191016155045) do
+ActiveRecord::Schema.define(version: 20191101114328) do
 
   create_table "acounts", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20191016155045) do
     t.datetime "updated_at", null: false
     t.integer "done_count"
     t.string "photo_url"
+    t.string "migration"
   end
 
 end
