@@ -13,8 +13,7 @@ class IdeasController < ApplicationController
   def create
     @title = params[:title]
     logger.info(@title)
-      hash={title:params[:title],done_count:params[:done_count],photo_url:params[:photo_url] }
-    idea = Idea.new(hash)
+    idea = Idea.new(params)
     idea.save!
     redirect_to(ideas_index_path)
   end
@@ -27,9 +26,8 @@ class IdeasController < ApplicationController
 
 
   def update
-    hash={title:params[:title],done_count:params[:done_count],photo_url:params[:photo_url] }
     idea=Idea.find(params[:id])
-    idea.update(hash)
+    idea.update(params)
     redirect_to(acount_ideas_path)
 
   end
@@ -39,6 +37,9 @@ class IdeasController < ApplicationController
 @idea= Idea.find(params[:id])
 
   end
-
+  private
+def idea_params
+  
+end
 
 end
