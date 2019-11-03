@@ -11,7 +11,7 @@ class IdeasTest < ApplicationSystemTestCase
   end
   test ' Ideas records' do
     idea1=Idea.new
-    idea1.title='titre enregistrer avans le test'
+    idea1.title='ma premier test'
     idea1.done_count=25
     idea1.photo_url='http://fpoimg.com/255x170'
     idea1.save!
@@ -35,12 +35,12 @@ class IdeasTest < ApplicationSystemTestCase
     idea2.done_count=90
     idea2.photo_url='http://fpoimg.com/255x170'
     idea2.save!
-    sleep(2.seconds)
+
 
       visit('/')
-      sleep(2.seconds)
+
     fill_in("q", with:"Mont").send_keys(:enter)
-      sleep(2.seconds)
+
     assert_equal current_path,ideas_path
     assert page.has_content?('Montée du Mont-Blanc')
     refute page.has_content?('Visit Niagara Falls')
@@ -48,7 +48,7 @@ class IdeasTest < ApplicationSystemTestCase
   test 'verification aucun idée crée' do
 
       visit ideas_path
-        sleep(2.seconds)
+
       assert page.has_content? ('No Ideas Found')
 
   end
