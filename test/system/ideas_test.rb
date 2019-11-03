@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class IdeasTest < ApplicationSystemTestCase
   test 'create new idea' do
-    visit ideas_new_path
+    visit new_idea_path
     fill_in('title', with: 'ma premier test')
     fill_in('nbr d abonne', with: 30)
     fill_in('photo url', with: 'http://fpoimg.com/255x170')
@@ -41,13 +41,13 @@ class IdeasTest < ApplicationSystemTestCase
       sleep(2.seconds)
     fill_in("q", with:"Mont").send_keys(:enter)
       sleep(2.seconds)
-    assert_equal current_path,ideas_index_path
+    assert_equal current_path,ideas_path
     assert page.has_content?('Montée du Mont-Blanc')
     refute page.has_content?('Visit Niagara Falls')
   end
   test 'verification aucun idée crée' do
 
-      visit ideas_index_path
+      visit ideas_path
         sleep(2.seconds)
       assert page.has_content? ('No Ideas Found')
 

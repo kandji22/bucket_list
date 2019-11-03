@@ -6,7 +6,7 @@ idea=Idea.new
 idea.title='je suis le nouveau titre'
 idea.done_count=96
 idea.save!
-visit (show_ideas_path(idea))
+visit (idea_path(idea))
   sleep(5.seconds)
 assert has_content?('je suis le nouveau titre')
 assert has_content?('96')

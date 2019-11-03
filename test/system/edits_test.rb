@@ -7,7 +7,7 @@ idea.title='moi lune'
 idea.done_count=2
 idea.photo_url='http://fpoimg.com/255x170'
 idea.save!
-visit edit_ideas_path(idea)
+visit  edit_idea_path(idea)
 
 fill_in('Title',with:'mon new titre')
 fill_in('nbr d abonne',with:90)
