@@ -123,4 +123,9 @@ idea1.migration='Séjour dans un refuge suisse à la montagne'
     idea2.save!
     assert_equal(Idea.search('montagne').length,2)
   end
+  test 'Definition d un titre trop long' do
+    idea1=Idea.new
+    idea1.title='Randonnée de nuit en Suisse Randonnée de nuit en Suisse Randonnée de nuit en Suisse Randonnée de nuit en Suisse Randonnée de nuit en Suisse Randonnée de nuit en Suisse'
+    assert_equal(idea1.valid?,false)  
+  end
 end
