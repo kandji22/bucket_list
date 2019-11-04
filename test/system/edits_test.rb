@@ -26,4 +26,17 @@ fill_in('Photo url',with: 'http://fpoimg.com/255x170')
 click_on('Create Idea')
 assert page.has_content?("Title can't be blank")
 end
+test 'test de titre trop long dans update' do
+  idea=Idea.new
+  idea.title='moi lune'
+  idea.done_count=2
+  idea.photo_url='http://fpoimg.com/255x170'
+  idea.migration='j adore ceci'
+  idea.save!
+  visit  edit_idea_path(idea)
+  fill_in('Title',with:'test de titre trop long dans updatetest de titre trop long dans updatetest de titre trop long dans update')
+  click_on("Update Idea")
+  assert page.has_content?("Title is too long (maximum is 75 characters)")
+
+end
 end
