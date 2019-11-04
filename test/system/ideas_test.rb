@@ -3,9 +3,9 @@ require "application_system_test_case"
 class IdeasTest < ApplicationSystemTestCase
   test 'create new idea' do
     visit new_idea_path
-    fill_in('title', with: 'ma premier test')
-    fill_in('nbr d abonne', with: 30)
-    fill_in('photo url', with: 'http://fpoimg.com/255x170')
+    fill_in('Title', with: 'ma premier test')
+    fill_in('Done count', with: 30)
+    fill_in('Photo url', with: 'http://fpoimg.com/255x170')
     click_on('Create')
     assert page.has_content?('ma premier test')
   end
