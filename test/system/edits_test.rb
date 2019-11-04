@@ -19,4 +19,11 @@ assert page.has_content?('mon new titre')
 assert page.has_content?(90)
 
 end
+test 'test d erreur de validation' do
+visit new_idea_path
+fill_in('Done count',with: 40)
+fill_in('Photo url',with: 'http://fpoimg.com/255x170')
+click_on('Create Idea')
+assert page.has_content?("Title can't be blank")
+end
 end

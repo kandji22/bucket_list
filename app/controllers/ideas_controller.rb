@@ -29,9 +29,12 @@ class IdeasController < ApplicationController
 
 
   def update
-    idea=Idea.find(params[:id])
-    idea.update(idea_resource_params)
+    @idea=Idea.find(params[:id])
+    if(@idea.update(idea_resource_params))
     redirect_to(acount_ideas_path)
+  else
+    render 'edit'
+  end
 
   end
 
