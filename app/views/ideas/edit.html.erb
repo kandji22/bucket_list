@@ -2,18 +2,19 @@
  <div class="content-wrapper">
    <h1>Modified idea</h1>
 
-     <%= form_tag(idea_path(@idea), method: 'PATCH', class: 'global-search') do %>
+
+      <%= form_for(@idea, html: { class: 'global-search'} do |form| %>
      <div class="input-group input-group--horizontal">
-       <label class="input-group__label" for="title">Title</label>
-       <%= text_field_tag('title', @idea.title, class: 'input-group__field', placeholder: 'E.g. Ride a camel' )  %>
+       <%= form.label(:title, class="input-group__label")%>
+        <%= form.text_field(:title, class: 'input-group__field', placeholder: 'E.g. Ride a camel')%>
      </div>
      <div class="input-group input-group--horizontal">
-       <label class="input-group__label" for="done_count">nbr d abonne</label>
-       <%= text_field_tag('done_count', @idea.done_count, class: 'input-group__field', placeholder: 'done_count' )  %>
+       <%= form.label(:done_count, class="input-group__label")%>
+      <%= form.text_field(:done_count, class: 'input-group__field',placeholder: 'done_count' )%>
      </div>
      <div class="input-group input-group--horizontal">
-       <label class="input-group__label" for="photo_url">photo url</label>
-       <%= text_field_tag('photo_url', @idea.photo_url, class: 'input-group__field', placeholder: 'done_count' )  %>
+       <%= form.label(:photo_url, class="input-group__label")%>
+      <%= form.text_field(:photo_url, class: 'input-group__field',placeholder: 'photo_url' )%>
      </div>
      <div class="prompt">
        <a class="prompt__cancel" href="#cancel">Cancel</a>
