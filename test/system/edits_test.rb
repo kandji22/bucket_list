@@ -10,7 +10,7 @@ idea.save!
 visit  edit_idea_path(idea)
 
 fill_in('Title',with:'mon new titre')
-fill_in('nbr d abonne',with:90)
+fill_in('Done count',with:90)
 
 click_on('Create')
 
