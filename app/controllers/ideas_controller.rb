@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
   def create
     @title = params[:title]
     logger.info(@title)
-    idea = Idea.new(idea_params)
+    idea = Idea.new(idea_resource_params)
     idea.save!
     redirect_to(ideas_path)
   end
@@ -36,12 +36,6 @@ class IdeasController < ApplicationController
   def show
 @idea= Idea.find(params[:id])
   end
-
-
-  private
-def idea_params
-  params.permit(:title,:photo_url,:done_count,:migration)
-end
 
 private
 def idea_resource_params
