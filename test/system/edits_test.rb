@@ -12,7 +12,7 @@ visit  edit_idea_path(idea)
 fill_in('Title',with:'mon new titre')
 fill_in('Done count',with:90)
 
-click_on('Create')
+click_on('Update Idea')
 
 click_on('mon new titre')
 assert page.has_content?('mon new titre')
