@@ -132,4 +132,17 @@ idea1.migration='Séjour dans un refuge suisse à la montagne'
     idea1=Idea.new
     assert_equal(idea1.valid?,false)
   end
+  test " les commentaires sont classé correctement" do
+    idea1= Idea.new(title:"je suis nouveau")
+    idea1.save
+    comment1=Comment.new(body: 'sa serait trés amusant')
+    comment1.save
+    comment2=Comment.new(body: 'sa serait trés amusant se titre2')
+    comment2.save
+    idea1.comments << comment1
+    idea1.comments << comment2
+    idea1.save
+    assert_equal(idea1.comments.find(1),comment1)
+    assert_equal(idea1.comments.length,2)
+  end
 end
