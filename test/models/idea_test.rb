@@ -135,9 +135,9 @@ idea1.migration='Séjour dans un refuge suisse à la montagne'
   test " les commentaires sont classé correctement" do
     idea1= Idea.new(title:"je suis nouveau")
     idea1.save
-    comment1=Comment.new(body: 'sa serait trés amusant')
+    comment1=Comment.new(body: 'sa serait trés amusant',user: User.new)
     comment1.save
-    comment2=Comment.new(body: 'sa serait trés amusant se titre2')
+    comment2=Comment.new(body: 'sa serait trés amusant se titre2',user: User.new)
     comment2.save
     idea1.comments << comment1
     idea1.comments << comment2
