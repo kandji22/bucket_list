@@ -41,6 +41,7 @@ class IdeasController < ApplicationController
 
   def show
 @idea= Idea.find(params[:id])
+@comments= Comment.new
   end
 
 private
