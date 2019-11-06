@@ -7,8 +7,7 @@ test "changer d'idée associé a un commentaire" do
   comment1=Comment.new(body:"j adore cette idée ", idea: idea1)
   comment1.save
   idea2=Idea.new(title:'babacar')
-  idea2.save
-  comment1.idea=idea2
+  idea comment1.idea=idea2
   comment1.save
   assert_equal(comment1.idea,Idea.find(2))
 
