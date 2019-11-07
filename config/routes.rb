@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get 'acount/ideas'
-
+  resources :users
   resources :ideas do
     resources :comments
   end
