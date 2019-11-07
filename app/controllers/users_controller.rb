@@ -5,10 +5,10 @@ class UsersController < ApplicationController
 
   def create
 
-  User.find_or_create_by(params_user)
+user = User.find_or_create_by(params_user)
+  session[:user_id] = user.id
   redirect_to(ideas_path)
   end
-
 
   private
   def params_user
