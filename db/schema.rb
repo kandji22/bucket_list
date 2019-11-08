@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191106142530) do
+ActiveRecord::Schema.define(version: 20191108111530) do
 
   create_table "acounts", force: :cascade do |t|
     t.string "title"
@@ -38,10 +38,7 @@ ActiveRecord::Schema.define(version: 20191106142530) do
     t.string "migration"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'reference' for column 'idea'
 
 end
